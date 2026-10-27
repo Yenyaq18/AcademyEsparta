@@ -1,0 +1,1 @@
+export { COLORS, ASISTENCIA_COLORS, TIPO_COLORS, TIPOS_EVALUACION, notaColor } from "./constans";
