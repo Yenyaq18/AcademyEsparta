@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate, Link as RouterLink } from "react-router-dom";
 import {
@@ -36,10 +35,7 @@ export default function Login() {
     try {
       setLoading(true);
 
-      // Asignamos la acción exacta que tu backend (api.js) espera según el rol seleccionado:
-      // - Estudiante -> 'login_est'
-      // - Profesor/Admin -> 'login'
-      // - Director -> 'login_dir'
+      // Asignamos la acción exacta que tu backend espera según el rol seleccionado
       let accionBackend = "login";
       if (role === "estudiante") {
         accionBackend = "login_est";
@@ -47,9 +43,8 @@ export default function Login() {
         accionBackend = "login_dir";
       }
 
-      // Enviamos la petición al servidor con la acción y las credenciales reales
-      const session = await loginAuto({ 
-        action: accionBackend, 
+      // Se envían separados: 1er parámetro la acción (string), 2do parámetro las credenciales
+      const session = await loginAuto(accionBackend, { 
         usuario: username, 
         password 
       });
@@ -285,8 +280,6 @@ export default function Login() {
               >
                 {loading ? <CircularProgress size={22} color="inherit" /> : "Iniciar sesión"}
               </Button>
-
-             
             </Box>
 
             {/* Divisor + Redes Sociales */}
