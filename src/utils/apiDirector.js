@@ -4,7 +4,7 @@
 import { request } from "./http";
 
 export const apiDirector = {
-  login: (usuario, clave) => request("login_dir", { usuario, clave }),
+  login: (usuario, clave) => request("login_dir", { usuario, clave }, "POST"),
   resumen: () => request("dir_resumen"),
   promedios: () => request("dir_promedios"),
   bimestres: () => request("dir_bimestres"),

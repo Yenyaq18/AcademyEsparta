@@ -4,7 +4,7 @@
 import { request, descargarPdf } from "./http";
 
 export const apiAdmin = {
-  login: (profesor, clave) => request("login", { profesor, clave }),
+  login: (profesor, clave) => request("login", { profesor, clave }, "POST"),
   getConfig: (profesor) => request("get_config", { profesor }),
   getAlumnos: (salon, curso) => request("get_alumnos", { salon, curso }),
   getAlumnosPorSalon: () => request("get_alumnos_por_salon"),
